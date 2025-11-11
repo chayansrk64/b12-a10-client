@@ -21,10 +21,10 @@ const Login = () => {
 
 
   return (
-    <div className="min-h-screen flex font-sans">
+    <div className="flex font-sans">
       {/* Left Panel */}
       <div className="w-1/2 bg-cover bg-center relative hidden lg:block" style={{ backgroundImage: "url('/sand-dunes.jpg')" }}>
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-between p-8 text-white">
+        <div className="absolute inset-0 h-[638px] bg-black bg-opacity-40 flex flex-col justify-between p-8 text-white">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold tracking-wide">PawMart</h1>
             <Link to="/" className="text-sm underline hover:text-gray-300">Back to Home</Link>

@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../../provider/AuthContext";
 import { auth } from "../../firebase/firebase.config";
@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 const Register = () => {
     
-    const {createUser} = use(AuthContext);
+  const {createUser} = use(AuthContext);
 
   const handleRegister = e => {
     e.preventDefault()
@@ -99,10 +99,10 @@ const Register = () => {
 
 
   return (
-     <div className="min-h-screen flex font-sans">
+     <div className=" flex font-sans">
       {/* Left Panel */}
       <div className="w-1/2 bg-cover bg-center relative hidden lg:block" style={{ backgroundImage: "url('/sand-dunes.jpg')" }}>
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-between p-8 text-white">
+        <div className="absolute inset-0 bg-black h-[638px] bg-opacity-40 flex flex-col justify-between p-8 text-white">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold tracking-wide">PawMart</h1>
             <Link to="/" className="text-sm underline hover:text-gray-300">Back to Home</Link>
