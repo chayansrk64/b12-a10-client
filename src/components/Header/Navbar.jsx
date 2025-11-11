@@ -1,13 +1,24 @@
 
+import { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../provider/AuthContext';
 
 const Navbar = () => {
-    const user = null;
+
+    const {user, loading, logOut} = use(AuthContext);
+    console.log(user);
     const links = <>
          <li><NavLink to="/">Home</NavLink></li>
          <li><NavLink to="/my-profile">Pets and Supplies</NavLink></li>
          
     </>
+
+    const handleLogOut = () => {
+        logOut()
+        .then(() => alert('sign out successfull'))
+        .catch(error => console.log(error))
+    }
+
     return (
         <div className='bg-[#30b5b2]'>
          <div className='sticky top-0 z-10 max-w-[1440px] mx-auto'>
@@ -32,20 +43,19 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
 
-                 
-              
+                
                 {
                     user ? <>
                        
                         <img className='w-10 h-10 rounded-full me-2' title={user?.displayName || "User"} src={ user?.photoURL} alt="" />
-                        <a  className="btn">Logout</a>
+                        <a onClick={handleLogOut} className="btn">Logout</a>
                         </>  : 
                         <>
-                    
                         <Link to="/login" className="btn me-2">Log in</Link>
                         <Link to="/register" className="btn">Register</Link>
                         </>
                 }
+              
                 
             </div>
             </div>
