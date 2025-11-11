@@ -1,11 +1,13 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../../provider/AuthContext";
 import { auth } from "../../firebase/firebase.config";
 import { updateProfile } from "firebase/auth";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { toast } from "react-toastify";
 
 const Register = () => {
-
+    
     const {createUser} = use(AuthContext);
 
   const handleRegister = e => {
@@ -17,6 +19,41 @@ const Register = () => {
     const password = e.target.password.value;
 
     const newUser = {name, photoURL, email, password}
+
+      // password validation by RegEx (regular expressions)!
+        const passwordLengthRegex = /^.{6,}$/;
+        const passwordCaseRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+         
+
+        if(!passwordLengthRegex.test(password)){
+             toast.error('Password should contain 6 charecters!', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              
+              });
+            return;
+        }
+        else if(!passwordCaseRegex.test(password)){
+           toast.error('Password should contains uppercase and lowercase!', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+               
+              });
+            return;
+        }
+         
 
     createUser(email, password)
     .then(result => {
@@ -37,7 +74,19 @@ const Register = () => {
             displayName: name,
             photoURL: photoURL
         })
-        .then(() => console.log('User profile updated'))
+        .then(() => {
+          toast.success('User Register Successfull!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          
+          });
+        })
         .catch(error => console.log(error))
     })
     .then(error => {
@@ -116,15 +165,10 @@ const Register = () => {
 
           <div className="text-center">
             <p className="text-sm text-gray-500 mb-4">Or register with</p>
-            <div className="flex justify-center space-x-4">
-              <button className="flex items-center px-4 py-2 border rounded-md hover:bg-gray-100">
-                <img src="/google-icon.svg" alt="Google" className="w-5 h-5 mr-2" />
-                Google
-              </button>
-              <button className="flex items-center px-4 py-2 border rounded-md hover:bg-gray-100">
-                <img src="/apple-icon.svg" alt="Apple" className="w-5 h-5 mr-2" />
-                Apple
-              </button>
+            <div className="flex justify-center w-full space-x-4">
+               {/* google login */}
+               <SocialLogin></SocialLogin>
+              
             </div>
           </div>
         </div>
