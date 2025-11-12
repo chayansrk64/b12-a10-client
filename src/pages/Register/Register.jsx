@@ -14,11 +14,11 @@ const Register = () => {
     e.preventDefault()
     
     const name = e.target.name.value;
-    const photoURL = e.target.photoURL.value;
+    const image = e.target.photoURL.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const newUser = {name, photoURL, email, password}
+    const newUser = {name, image, email}
 
       // password validation by RegEx (regular expressions)!
         const passwordLengthRegex = /^.{6,}$/;
@@ -64,15 +64,26 @@ const Register = () => {
                     if(user.providerData[0]){
                          if(user.providerData[0].providerId == "password"){
                             user.displayName = name
-                            user.photoURL = photoURL
+                            user.photoURL = image
                          }
                     }
                 }
             }
-        console.log(result);
+            fetch('http://localhost:3000/users', {
+              method: "POST",
+              headers: {
+                'content-type':'application/json'
+              },
+              body: JSON.stringify(newUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+              console.log('after saved to db =>', data);
+            })
+        console.log(user);
         updateProfile(auth.currentUser, {
             displayName: name,
-            photoURL: photoURL
+            photoURL: image
         })
         .then(() => {
           toast.success('User Register Successfull!', {
@@ -87,9 +98,13 @@ const Register = () => {
           
           });
         })
-        .catch(error => console.log(error))
-    })
-    .then(error => {
+        .catch(error => {
+          console.log(error)
+          toast.error(error.message)
+        })  
+      })
+      .catch(error => {
+      toast.error(error.message)
         console.log(error);
     })
     

@@ -4,7 +4,7 @@ import { AuthContext } from '../../provider/AuthContext';
 import { toast } from 'react-toastify';
 
 const SocialLogin = () => {
-    const {googleLogin, setUser} = use(AuthContext);
+    const {googleLogin } = use(AuthContext);
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -13,10 +13,25 @@ const SocialLogin = () => {
         googleLogin()
         .then(result => {
             const user = result.user;
-           
-            setUser(user)
-            toast("Google Login Successfull!")
-             navigate(`${location.state ? location.state : "/"}`)
+            const newUser = {
+                name: user.displayName,
+                image: user.photoURL,
+                email: user.email
+            }
+            fetch('http://localhost:3000/users', {
+                method: "POST",
+                headers: {
+                    'content-type':'application/json'
+                },
+                body: JSON.stringify(newUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log('after saved db =>', data);
+                toast("Google Login Successfull!")
+                navigate(`${location.state ? location.state : "/"}`)
+            })
+            // setUser(user)
         })
         .catch(error => {
             toast.error(error.message)
