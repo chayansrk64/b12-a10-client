@@ -25,7 +25,7 @@ const Categories = ({listingsPromise}) => {
                     <div className="card">
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
-                    <p>{item.location}</p>
+                    <p className='font-semibold'>Category: {item.category}</p>
                     </div>
                 </Link>
                 ))}
@@ -37,7 +37,7 @@ const Categories = ({listingsPromise}) => {
                     <div className="card">
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
-                    <p>{item.location}</p>
+                   <p className='font-semibold'>Category: {item.category}</p>
                     </div>
                 </Link>
                 ))}
@@ -49,7 +49,7 @@ const Categories = ({listingsPromise}) => {
                     <div className="card">
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
-                    <p>{item.location}</p>
+                    <p className='font-semibold'>Category: {item.category}</p>
                     </div>
                 </Link>
                 ))}
@@ -61,7 +61,7 @@ const Categories = ({listingsPromise}) => {
                     <div className="card">
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
-                    <p>{item.location}</p>
+                    <p className='font-semibold'>Category: {item.category}</p>
                     </div>
                 </Link>
                 ))}

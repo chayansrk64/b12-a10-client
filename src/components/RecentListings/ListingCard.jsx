@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const ListingCard = ({listing}) => {
+    const {_id, name, image, category, location, description, price} = listing
     return (
         <div>
               <>
@@ -14,26 +15,26 @@ const ListingCard = ({listing}) => {
       {/* Image */}
       <div className="bg-white rounded-xl overflow-hidden">
         <img
-          src={listing.image}
-          alt={listing.name}
+          src={image}
+          alt={name}
           className="w-full h-48 object-cover"
         />
       </div>
 
       {/* Details */}
       <div className="bg-white -mt-4 p-4 rounded-xl">
-        <h3 className="font-semibold pt-4 text-lg text-gray-800">{listing.name}</h3>
+        <h3 className="font-semibold pt-4 text-lg text-gray-800">{name}</h3>
         <div className="flex gap-2 mt-1 mb-2">
           <span className="text-xs bg-gray-100 px-2 py-1 rounded-md text-gray-700">
-            {listing.category}
+            {category}
           </span>
           <span className="text-xs bg-gray-100 px-2 py-1 rounded-md text-gray-700">
-            {listing.location}
+            {location}
           </span>
         </div>
 
         <p className="text-sm text-gray-600 line-clamp-2">
-          {listing.description}
+          {description}
         </p>
 
         {/* Price & Button */}
@@ -41,10 +42,10 @@ const ListingCard = ({listing}) => {
           <div>
             <p className="text-xs text-gray-400">PRICE</p>
             <p className="text-lg font-semibold text-gray-900">
-              {listing.price === 0 ? "Free" : `৳${listing.price}`}
+              {price === 0 ? "Free" : `৳${price}`}
             </p>
           </div>
-          <Link to={`/listing-details/${listing._id}`} className="bg-[#30b5b2] text-white px-4 py-2 rounded-lg transition">
+          <Link to={`/listing-details/${_id}`} className="bg-[#30b5b2] text-white px-4 py-2 rounded-lg transition">
             See Details
           </Link>
         </div>
