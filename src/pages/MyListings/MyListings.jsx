@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthContext';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import { Link } from 'react-router';
 
 const MyListings = () => {
     const {user} = use(AuthContext)
@@ -66,6 +67,7 @@ const MyListings = () => {
         </td>
         <td className="font-bold">{listing.price}</td>
         <td>
+          <Link to={`/listing-update/${listing._id}`} className="btn btn-ghost btn-xs bg-green-500 text-white me-2">Update</Link>
           <button className="btn btn-ghost btn-xs bg-red-500 text-white">Delete</button>
         </td>
       </tr>

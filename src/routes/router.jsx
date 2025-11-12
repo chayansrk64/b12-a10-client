@@ -11,6 +11,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ListingDetails from "../pages/ListingDetails/ListingDetails";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import PetsAndSupplies from "../pages/PetsAndSupplies/PetsAndSupplies";
+import UpdateListing from "../components/UpdateListing/UpdateListing";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
                 path: '/listing-details/:id',
                 loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
                 element: <PrivateRoute><ListingDetails></ListingDetails></PrivateRoute>
+            },
+            {
+                path: '/listing-update/:id',
+                loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
+                element: <UpdateListing></UpdateListing>
             },
             {
                 path: '/category/:categoryName',
