@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             {
                 path: '/listing-details/:id',
                 loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
-                element: <ListingDetails></ListingDetails>
+                element: <PrivateRoute><ListingDetails></ListingDetails></PrivateRoute>
             },
             {
                 path: '/category/:categoryName',
