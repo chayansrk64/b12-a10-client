@@ -10,7 +10,7 @@ const Navbar = () => {
     console.log(user);
     const links = <>
          <li><NavLink to="/">Home</NavLink></li>
-         <li><NavLink to="/my-profile">Pets and Supplies</NavLink></li>
+         <li><NavLink to="/my-and-supplies">Pets and Supplies</NavLink></li>
          {
             user && <>
                 <li><NavLink to="/add-listing">Add Listing</NavLink></li>

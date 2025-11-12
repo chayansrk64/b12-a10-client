@@ -25,7 +25,7 @@ const CategoryPage = () => {
             {/* category cards */}
             <div className='grid grid-rows-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
-                    items.map(item =>    <div key={item._id} className="relative bg-gradient-to-br from-red-100 to-red-200 rounded-2xl shadow-md hover:shadow-xl transition p-4 ">
+                    items.map(item =>    <div key={item._id} className="relative bg-linear-to-br from-red-100 to-red-200 rounded-2xl shadow-md hover:shadow-xl transition p-4 ">
       {/* Favorite Icon */}
       <button className="absolute top-3 right-3 bg-white rounded-full p-1 shadow hover:bg-purple-100 transition">
         

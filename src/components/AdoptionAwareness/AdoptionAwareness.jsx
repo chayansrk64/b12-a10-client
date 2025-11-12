@@ -3,11 +3,11 @@ import React from 'react';
 const AdoptionAwareness = () => {
     return (
         <div>
-             <section className="bg-gradient-to-br from-pink-50 to-pink-100 py-16 px-6 text-center rounded-3xl shadow-inner max-w-5xl mx-auto my-16">
+             <section className="bg-linear-to-br from-pink-50 to-pink-100 py-16 px-6 text-center rounded-3xl shadow-inner max-w-5xl mx-auto my-16">
       <h2 className="text-3xl font-bold text-gray-800 mb-4 flex items-center justify-center gap-4">
-        <span className="h-[2px] w-10 bg-pink-500 rounded"></span>
+        <span className="h-0.5 w-10 bg-pink-500 rounded"></span>
         Why Adopt from <span className="text-pink-600">PawMart?</span>
-        <span className="h-[2px] w-10 bg-pink-500 rounded"></span>
+        <span className="h-0.5 w-10 bg-pink-500 rounded"></span>
       </h2>
 
       <p className="text-gray-700 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">

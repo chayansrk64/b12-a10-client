@@ -37,14 +37,14 @@ const heroes = [
 
 const PetHeroes = () => {
   return (
-    <section className="py-16 px-6 bg-gradient-to-br from-purple-50 to-pink-50">
+    <section className="py-16 px-6 bg-linear-to-br from-purple-50 to-pink-50">
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-4 mb-3">
-          <span className="h-[2px] w-10 bg-pink-500 rounded"></span>
+          <span className="h-0.5 w-10 bg-pink-500 rounded"></span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
             Meet Our <span className="text-pink-600">Pet Heroes</span>
           </h2>
-          <span className="h-[2px] w-10 bg-pink-500 rounded"></span>
+          <span className="h-0.5 w-10 bg-pink-500 rounded"></span>
         </div>
         <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
           These amazing humans chose adoption and rescue — giving countless pets

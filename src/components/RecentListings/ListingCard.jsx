@@ -6,7 +6,7 @@ const ListingCard = ({listing}) => {
     return (
         <div>
               <>
-            <div className="relative bg-gradient-to-br from-red-100 to-red-200 rounded-2xl shadow-md hover:shadow-xl transition p-4 mx-auto">
+            <div className="relative bg-linear-to-br from-red-100 to-red-200 rounded-2xl shadow-md hover:shadow-xl transition p-4 mx-auto">
       {/* Favorite Icon */}
       <button className="absolute top-3 right-3 bg-white rounded-full p-1 shadow hover:bg-purple-100 transition">
         

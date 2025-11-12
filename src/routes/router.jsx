@@ -10,6 +10,7 @@ import MyOrders from "../pages/MyOrders/MyOrders";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ListingDetails from "../pages/ListingDetails/ListingDetails";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
+import PetsAndSupplies from "../pages/PetsAndSupplies/PetsAndSupplies";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 Component: Register
+            },
+            {
+                path: '/my-and-supplies',
+                Component: PetsAndSupplies
             },
             {
                 path: '/listing-details/:id',
