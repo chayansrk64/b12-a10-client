@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ListingCard from '../../components/RecentListings/ListingCard';
+import { AuthContext } from '../../provider/AuthContext';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const PetsAndSupplies = () => {
+  const {loading, setLoading} = use(AuthContext);
   const [listings, setListings] = useState([]);
   const [displayedListings, setDisplayedListings] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -14,10 +17,11 @@ const PetsAndSupplies = () => {
       .then((res) => res.json())
       .then((data) => {
         setListings(data);
-        setDisplayedListings(data); // 👈 show all listings initially
+        setDisplayedListings(data); 
+        setLoading(false)
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [setLoading]);
 
   // ✅ Handle category filter
   const handleCategoryChange = (e) => {
@@ -60,6 +64,11 @@ const PetsAndSupplies = () => {
     setDisplayedListings(filtered);
   };
 
+   if(loading){
+    return <LoadingSpinner></LoadingSpinner>
+  }
+ 
+
   return (
     <div className="max-w-7xl mx-auto px-4">
       <SectionTitle title="Pets and Listings" />
@@ -99,6 +108,8 @@ const PetsAndSupplies = () => {
           />
         </div>
       </div>
+
+ 
 
       {/* Listings Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">

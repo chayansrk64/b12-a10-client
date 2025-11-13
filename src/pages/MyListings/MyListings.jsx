@@ -3,9 +3,10 @@ import { AuthContext } from '../../provider/AuthContext';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { Link } from 'react-router';
 import { toast } from 'react-toastify';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const MyListings = () => {
-    const {user} = use(AuthContext)
+    const {user, loading, setLoading} = use(AuthContext)
     const [myListings, setMyListings] = useState([])
 
     useEffect(() => {
@@ -13,9 +14,9 @@ const MyListings = () => {
         .then(res => res.json())
         .then(data => {
             setMyListings(data)
-            // console.log('data by user', data);
+            setLoading(false)
         })
-    }, [user])
+    }, [user, setLoading])
 
 const handleDelete = (id) => {
   // Show confirmation toast with buttons
@@ -66,6 +67,10 @@ const handleDelete = (id) => {
     }
   );
 };
+
+if(loading){
+  return <LoadingSpinner></LoadingSpinner>
+}
 
     return (
         <div className='max-w-7xl mx-auto'>

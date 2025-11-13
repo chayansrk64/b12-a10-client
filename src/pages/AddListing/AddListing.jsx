@@ -2,9 +2,10 @@ import React, { use } from 'react';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { AuthContext } from '../../provider/AuthContext';
 import { toast } from 'react-toastify';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const AddListing = () => {
-    const {user} = use(AuthContext)
+    const {user, loading, setLoading} = use(AuthContext)
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -34,9 +35,15 @@ const AddListing = () => {
             console.log('after saved to db=>', data);
             if(data.insertedId){
                 toast("Listing Added")
+                setLoading(false)
             }
         })
 
+    }
+
+
+    if(loading){
+      return <LoadingSpinner></LoadingSpinner>
     }
 
 

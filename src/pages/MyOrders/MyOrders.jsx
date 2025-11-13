@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from "react";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { AuthContext } from "../../provider/AuthContext";
 import jsPDF from "jspdf";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 
 
@@ -9,7 +10,7 @@ import jsPDF from "jspdf";
 
 const MyOrders = () => {
 
-  const { user } = use(AuthContext);
+  const { user, loading, setLoading} = use(AuthContext);
   const [myOrders, setMyOrders] = useState([]);
 
   useEffect(() => {
@@ -18,9 +19,9 @@ const MyOrders = () => {
       .then((res) => res.json())
       .then((data) => {
         setMyOrders(data);
-        console.log("data by user", data);
+        setLoading(false)
       });
-  }, [user]);
+  }, [user, setLoading]);
 
 
 
@@ -130,6 +131,9 @@ const MyOrders = () => {
   }
 
 
+  if(loading){
+    return <LoadingSpinner></LoadingSpinner>
+  }
 
   return (
     <div className="max-w-7xl mx-auto">
