@@ -12,6 +12,7 @@ import ListingDetails from "../pages/ListingDetails/ListingDetails";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import PetsAndSupplies from "../pages/PetsAndSupplies/PetsAndSupplies";
 import UpdateListing from "../components/UpdateListing/UpdateListing";
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 
 const router = createBrowserRouter([
     {
@@ -37,12 +38,14 @@ const router = createBrowserRouter([
             {
                 path: '/listing-details/:id',
                 loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
-                element: <PrivateRoute><ListingDetails></ListingDetails></PrivateRoute>
+                element: <PrivateRoute><ListingDetails></ListingDetails></PrivateRoute>,
+                hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>
             },
             {
                 path: '/listing-update/:id',
                 loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
-                element: <UpdateListing></UpdateListing>
+                element: <UpdateListing></UpdateListing>,
+                hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>
             },
             {
                 path: '/category/:categoryName',

@@ -1,16 +1,48 @@
-# React + Vite
+# 🐾 PawMart — Adopt, Rescue & Rehome Pets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** [https://pawmart-6d54f.web.app](https://pawmart-6d54f.web.app)  
+**Server API:** [http://localhost:3000](http://localhost:3000)
 
-Currently, two official plugins are available:
+PawMart is a pet adoption and care platform built with modern web technologies.  
+It connects adopters with lovable pets and promotes compassion through adoption and rescue awareness.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌟 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🐕 **Pet Listings & CRUD:** Add, edit, delete, and view pet listings using MongoDB and Express.
+- 🔐 **Firebase Authentication:** Secure login and registration via Google or email/password.
+- 🎨 **Modern UI/UX:** Built with **React Vite**, **Tailwind CSS**, and **DaisyUI** for a responsive, elegant design.
+- 🌗 **Light/Dark Theme Toggle:** Seamless theme switch using DaisyUI’s built-in theming.
+- 🧠 **Context API Integration:** Centralized state management for authentication and UI logic.
+- 🎬 **Framer Motion Animations:** Smooth page and component transitions for a lively user experience.
+- 💡 **React Tooltip:** Interactive tooltips for improved usability and guidance.
+- 🧩 **Category & Filter System:** Quickly browse by category — Pets, Pet Food, Accessories, and Pet Care.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Technologies Used
+
+- **React Vite**
+- **Tailwind CSS + DaisyUI**
+- **Firebase Authentication**
+- **React Router**
+- **Context API**
+- **Framer Motion**
+- **React Tooltip**
+- **MongoDB Atlas (via Express backend)**
+
+---
+
+## ⚙️ Installation and Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/pawmart-client.git
+cd pawmart-client
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
