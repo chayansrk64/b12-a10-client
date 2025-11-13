@@ -11,16 +11,36 @@ const Navbar = () => {
     // console.log(user);
 
     const links = <>
-         <li><NavLink to="/">Home</NavLink></li>
-         <li><NavLink to="/my-and-supplies">Pets and Supplies</NavLink></li>
+         <li><NavLink to="/"  className={({ isActive }) =>
+    isActive
+      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
+      : "text-white px-4 py-2  transition"
+  }>Home</NavLink></li>
+         <li><NavLink to="/my-and-supplies" className={({ isActive }) =>
+    isActive
+      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
+      : "text-white px-4 py-2  transition"
+  }>Pets and Supplies</NavLink></li>
          {
             user && <>
-                <li><NavLink to="/add-listing">Add Listing</NavLink></li>
-                <li><NavLink to="/my-listings">My Listings</NavLink></li>
-                <li><NavLink to="/my-orders">My Orders</NavLink></li>
+                <li><NavLink to="/add-listing" className={({ isActive }) =>
+    isActive
+      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
+      : "text-white px-4 py-2  transition"
+  }>Add Listing</NavLink></li>
+                <li><NavLink to="/my-listings" className={({ isActive }) =>
+    isActive
+      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
+      : "text-white px-4 py-2  transition"
+  }>My Listings</NavLink></li>
+                <li><NavLink to="/my-orders" className={({ isActive }) =>
+    isActive
+      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
+      : "text-white px-4 py-2  transition"
+  }>My Orders</NavLink></li>
             </>
          }
-         <li><NavLink to="/my-profile">{user?.displayName}</NavLink></li>
+       
          
     </>
 
@@ -78,7 +98,7 @@ const Navbar = () => {
                          className="toggle me-2" />
 
                         <img className='w-10 h-10 rounded-full me-2' title={user?.displayName || "User"} src={ user?.photoURL} alt="" />
-                        <a onClick={handleLogOut} className="btn">Logout</a>
+                        <a onClick={handleLogOut} className="btn bg-pink-500 text-white ">Logout</a>
                         </>  : 
                         <>
                         <Link to="/login" className="btn me-2">Log in</Link>

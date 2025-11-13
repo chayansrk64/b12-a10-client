@@ -35,7 +35,7 @@ const ListingDetails = () => {
             date: new Date()
         }
 
-        console.log(myOrder);
+        // console.log(myOrder);
 
         // saved to database;
         fetch('http://localhost:3000/orders', {
@@ -107,14 +107,14 @@ const ListingDetails = () => {
                                 <input type="text" name='notes' className="input"  />
                                  
                                 
-                                <button className="btn btn-neutral mt-4">Order Now</button>
+                                <button className="btn  mt-4 bg-pink-500 text-white ">Order Now</button>
                                 </fieldset>
                             </form>
 
                             <div className="modal-action">
                             <form method="dialog">
                                 {/* if there is a button in form, it will close the modal */}
-                                <button className="btn">Cancel</button>
+                                <button className="btn bg-pink-500 text-white ">Cancel</button>
                             </form>
                             </div>
                         </div>

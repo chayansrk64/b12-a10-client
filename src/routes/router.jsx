@@ -14,6 +14,8 @@ import PetsAndSupplies from "../pages/PetsAndSupplies/PetsAndSupplies";
 import UpdateListing from "../components/UpdateListing/UpdateListing";
 import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 
+
+
 const router = createBrowserRouter([
     {
         path: "/",

@@ -21,7 +21,7 @@ const RecentListings = ({listingsPromise}) => {
                 animate="show"
             >
                 {
-                    listings.slice(0,6).map(listing => <ListingCard listing={listing} key={listing._id}></ListingCard>)
+                    listings.map(listing => <ListingCard listing={listing} key={listing._id}></ListingCard>)
                 }
             </motion.div>
         </div>

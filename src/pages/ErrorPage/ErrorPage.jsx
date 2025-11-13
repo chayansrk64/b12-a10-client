@@ -13,7 +13,7 @@ const ErrorPage = () => {
       </div>
       <img
         className="my-6"
-        src="https://thumbs.dreamstime.com/b/error-sorry-page-not-found-message-holding-sad-cute-black-cat-vector-76870840.jpg"
+        src="https://i.ibb.co.com/PswfM0Qt/error-sorry-page-not-found-message-holding-sad-cute-black-cat-vector-76870840.jpg"
         alt="Page not found"
       />
     </div>

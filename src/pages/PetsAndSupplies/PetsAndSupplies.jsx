@@ -3,8 +3,10 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ListingCard from '../../components/RecentListings/ListingCard';
 import { AuthContext } from '../../provider/AuthContext';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
-
+import usePageTitle from '../../hooks/usePageTitle';
+ 
 const PetsAndSupplies = () => {
+   usePageTitle("Listing Details");
   const {loading, setLoading} = use(AuthContext);
   const [listings, setListings] = useState([]);
   const [displayedListings, setDisplayedListings] = useState([]);
@@ -71,7 +73,8 @@ const PetsAndSupplies = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4">
-      <SectionTitle title="Pets and Listings" />
+       
+      <SectionTitle title="Pets and Supplies" />
 
       {/* Filter + Search Row */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-6">

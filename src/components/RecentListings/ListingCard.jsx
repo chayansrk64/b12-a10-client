@@ -52,7 +52,7 @@ const ListingCard = ({listing}) => {
               {price === 0 ? "Free" : `৳${price}`}
             </p>
           </div>
-          <Link to={`/listing-details/${_id}`} className="bg-[#30b5b2] text-white px-4 py-2 rounded-lg transition">
+          <Link to={`/listing-details/${_id}`} className="bg-pink-500 text-white  px-4 py-2 rounded-lg transition">
             See Details
           </Link>
         </div>
