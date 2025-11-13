@@ -7,14 +7,14 @@ import { motion } from "motion/react"
 
 const Categories = ({listingsPromise}) => {
     const categories = use(listingsPromise)
-    console.log('categories', categories);
+    // console.log('categories', categories);
 
     const pets = categories.filter(item => item.category === "Pets").slice(0,1)
     const petFood = categories.filter(item => item.category === "Pet Food").slice(0,1)
     const Accessories = categories.filter(item => item.category === "Accessories").slice(0,1)
     const petCare = categories.filter(item => item.category === "Pet Care").slice(0,1)
 
-    console.log(pets, petFood, Accessories, petCare);
+    // console.log(pets, petFood, Accessories, petCare);
 
     return (
         <div className='max-w-7xl mx-auto'>

@@ -3,11 +3,12 @@ import { use, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../provider/AuthContext';
 import { toast } from 'react-toastify';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
     const {user, loading, logOut} = use(AuthContext);
-    console.log(user);
+    // console.log(user);
 
     const links = <>
          <li><NavLink to="/">Home</NavLink></li>
@@ -37,6 +38,10 @@ const Navbar = () => {
 
     const handleTheme = (checked) => {
         setTheme(checked ? "light" : "dark")
+    }
+
+    if (loading) {
+        return <LoadingSpinner />;
     }
 
     return (

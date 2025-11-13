@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 
 const googleProvider = new GoogleAuthProvider();
  
@@ -49,6 +50,10 @@ const AuthProvider = ({children}) => {
         signInUser,
         googleLogin,
         logOut,
+    }
+
+    if(loading){
+        return <LoadingSpinner></LoadingSpinner>
     }
 
     return <AuthContext value={authData}>
