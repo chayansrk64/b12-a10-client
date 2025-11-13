@@ -15,7 +15,7 @@ const RecentListings = ({listingsPromise}) => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8'>
                 {
-                    listings.slice(0,6).map(listing => <ListingCard listing={listing}></ListingCard>)
+                    listings.slice(0,6).map(listing => <ListingCard listing={listing} key={listing._id}></ListingCard>)
                 }
             </div>
         </div>

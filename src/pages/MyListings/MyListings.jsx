@@ -13,7 +13,7 @@ const MyListings = () => {
         .then(res => res.json())
         .then(data => {
             setMyListings(data)
-            console.log('data by user', data);
+            // console.log('data by user', data);
         })
     }, [user])
 
