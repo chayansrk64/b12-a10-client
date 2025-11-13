@@ -13,6 +13,7 @@ const MyOrders = () => {
   const [myOrders, setMyOrders] = useState([]);
 
   useEffect(() => {
+     if (!user?.email) return;
     fetch(`http://localhost:3000/orders?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
@@ -136,7 +137,7 @@ const MyOrders = () => {
       {/* table container */}
       <div>
         <div className="text-right my-3">
-            <button onClick={handleDownloadPDF}  className="btn btn-accent">Download as pdf</button>
+            <button onClick={handleDownloadPDF}  className="btn btn-accent tooltip" data-tip="Download form as PDF">Download </button>
             </div>
         <div className="overflow-x-auto">
           <table className="table">

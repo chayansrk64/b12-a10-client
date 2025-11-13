@@ -117,8 +117,11 @@ const handleDelete = (id) => {
         </td>
         <td className="font-bold">{listing.price}</td>
         <td>
-          <Link to={`/listing-update/${listing._id}`} className="btn btn-ghost btn-xs bg-green-500 text-white me-2">Update</Link>
-          <button onClick={() => handleDelete(`${listing._id}`)} className="btn btn-ghost btn-xs bg-red-500 text-white">Delete</button>
+          <Link to={`/listing-update/${listing._id}`}
+          className="btn btn-ghost btn-xs bg-green-500 text-white me-2 tooltip" data-tip="Update Your Product">
+          Update
+          </Link>
+          <button onClick={() => handleDelete(`${listing._id}`)} className="btn btn-ghost btn-xs bg-red-500 text-white tooltip" data-tip="Delete Your Product">Delete</button>
         </td>
       </tr>
      )

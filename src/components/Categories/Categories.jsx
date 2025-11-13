@@ -22,7 +22,7 @@ const Categories = ({listingsPromise}) => {
                  <div className="">
                 {pets.map((item, index) => (
                 <Link key={index} to={`/category/${item.category}`}>
-                    <div className="card">
+                    <div className="card tooltip" data-tip={`${item.category}`}>
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
                     <p className='font-semibold'>Category: {item.category}</p>
@@ -34,7 +34,7 @@ const Categories = ({listingsPromise}) => {
                  <div className="">
                 {petFood.map((item, index) => (
                 <Link key={index} to={`/category/${item.category}`}>
-                    <div className="card">
+                    <div className="card tooltip" data-tip={`${item.category}`}>
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
                    <p className='font-semibold'>Category: {item.category}</p>
@@ -46,7 +46,7 @@ const Categories = ({listingsPromise}) => {
                  <div className="">
                 {Accessories.map((item, index) => (
                 <Link key={index} to={`/category/${item.category}`}>
-                    <div className="card">
+                    <div className="card tooltip" data-tip={`${item.category}`}>
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
                     <p className='font-semibold'>Category: {item.category}</p>
@@ -58,7 +58,7 @@ const Categories = ({listingsPromise}) => {
                  <div className="">
                 {petCare.map((item, index) => (
                 <Link key={index} to={`/category/${item.category}`}>
-                    <div className="card">
+                    <div className="card tooltip" data-tip={`${item.category}`}>
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
                     <p className='font-semibold'>Category: {item.category}</p>
