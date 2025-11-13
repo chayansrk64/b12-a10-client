@@ -3,6 +3,8 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 import { Link } from 'react-router';
 import { motion } from "motion/react"
 
+
+
 const Categories = ({listingsPromise}) => {
     const categories = use(listingsPromise)
     console.log('categories', categories);

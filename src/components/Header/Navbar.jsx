@@ -1,13 +1,14 @@
 
-import { use } from 'react';
+import { use, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../provider/AuthContext';
 import { toast } from 'react-toastify';
 
 const Navbar = () => {
-
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
     const {user, loading, logOut} = use(AuthContext);
     console.log(user);
+
     const links = <>
          <li><NavLink to="/">Home</NavLink></li>
          <li><NavLink to="/my-and-supplies">Pets and Supplies</NavLink></li>
@@ -26,6 +27,16 @@ const Navbar = () => {
         logOut()
         .then(() => toast('sign out successfull'))
         .catch(error => console.log(error))
+    }
+
+    useEffect(() => {
+        const html = document.querySelector('html')
+        html.setAttribute("data-theme", theme)
+        localStorage.setItem('theme', theme)
+    }, [theme])
+
+    const handleTheme = (checked) => {
+        setTheme(checked ? "light" : "dark")
     }
 
     return (
@@ -54,7 +65,13 @@ const Navbar = () => {
 
                 {
                     user ? <>
-                       
+
+                        <input
+                        onChange={(e) => handleTheme(e.target.checked)}
+                         type="checkbox" 
+                         defaultChecked 
+                         className="toggle me-2" />
+
                         <img className='w-10 h-10 rounded-full me-2' title={user?.displayName || "User"} src={ user?.photoURL} alt="" />
                         <a onClick={handleLogOut} className="btn">Logout</a>
                         </>  : 
