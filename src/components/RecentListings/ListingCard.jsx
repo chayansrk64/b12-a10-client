@@ -1,18 +1,13 @@
-import React from 'react';
 import { Link } from 'react-router';
-import { motion } from "motion/react"
 
 
 const ListingCard = ({listing}) => {
     const {_id, name, image, category, location, description, price} = listing
     return (
-        <motion.div 
-        initial="hidden"
-        animate="show"
-        >
-              <>
-            <motion.div className="relative bg-[#EEEEEE] rounded-2xl shadow hover:shadow-md transition p-4 mx-auto"
-             variants={{hidden:{opacity:0}, show:{opacity:1}}}
+        <div className='overflow-y-hidden'>
+         <>
+            <div data-aos="fade-up" className="relative bg-[#EEEEEE] rounded-2xl shadow hover:shadow-md transition p-4 mx-auto"
+            
             >
       {/* Favorite Icon */}
       <button className="absolute top-3 right-3 bg-white rounded-full p-1 shadow hover:bg-purple-100 transition">
@@ -57,9 +52,9 @@ const ListingCard = ({listing}) => {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </div>
                     </>
-        </motion.div>
+        </div>
     );
 };
 
