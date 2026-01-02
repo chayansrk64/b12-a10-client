@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+ 
 
 const heroes = [
   {
@@ -38,7 +39,7 @@ const heroes = [
 const PetHeroes = () => {
   return (
     <section className="py-16 px-6 ">
-      <div className="text-center mb-12">
+      <div data-aos="fade-up" className="text-center mb-12">
         <div className="flex items-center justify-center gap-4 mb-3">
           <span className="h-0.5 w-10 bg-[#777C6D] rounded"></span>
           <h2 className="text-3xl md:text-3xl font-bold">
@@ -53,7 +54,7 @@ const PetHeroes = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {heroes.map((hero) => (
           <div
             key={hero.id}

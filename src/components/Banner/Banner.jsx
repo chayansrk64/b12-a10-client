@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {AnimatePresence,  motion } from "framer-motion";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 
 // Import Swiper styles
@@ -43,7 +43,7 @@ const [activeIndex, setActiveIndex] = useState(0);
  const navigate = useNavigate();
 
     return (
-         <div className='md:min-h-[700px] relative pt-16 lg:pt-[69px]'>
+         <div className=' md:min-h-[700px] relative pt-16 lg:pt-[69px]'>
          
         <Swiper
          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
@@ -70,7 +70,7 @@ const [activeIndex, setActiveIndex] = useState(0);
 
         className="md:h-[700px] w-full object-cover" src={slide.image} alt={slide.title} />
 
-        <div className="absolute top-5 md:top-20 left-4 md:left-20 text-white max-w-2xl">
+        <div className="absolute top-5 md:top-20 left-4 md:left-40 lg:left-60 text-white max-w-2xl ">
           <motion.h1
             key={activeIndex + "title"} 
             initial={{ opacity: 0, y: -50 }}
