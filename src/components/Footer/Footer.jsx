@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
     return (
-        <div className="bg-[#30b5b2]">
+        <div className="bg-[#777C6D]">
            <footer className="footer sm:footer-horizontal max-w-[1440px] mx-auto text-neutral-content p-10">
   <aside>
      <Link to="/" className="btn btn-ghost text-xl">Paw <span className='text-[#e9598e]'>Mart</span></Link>

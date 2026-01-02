@@ -14,7 +14,7 @@ import { Autoplay, Pagination, Navigation, Parallax } from "swiper/modules";
 
 const Banner = () => {
     return (
-         <div className='md:min-h-[700px] relative'>
+         <div className='md:min-h-[700px] relative pt-16 lg:pt-[69px]'>
          
         <Swiper
           spaceBetween={30}

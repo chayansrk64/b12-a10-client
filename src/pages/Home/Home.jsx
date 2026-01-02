@@ -1,4 +1,3 @@
-import React from 'react';
 import Banner from '../../components/Banner/Banner';
 import RecentListings from '../../components/RecentListings/RecentListings';
 import AdoptionAwareness from '../../components/AdoptionAwareness/AdoptionAwareness';

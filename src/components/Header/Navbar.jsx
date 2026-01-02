@@ -13,30 +13,30 @@ const Navbar = () => {
     const links = <>
          <li><NavLink to="/"  className={({ isActive }) =>
     isActive
-      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
-      : "text-white px-4 py-2  transition"
+      ? "bg-[#B7B89F] px-4 py-2   font-medium"
+      : " px-4 py-2  transition"
   }>Home</NavLink></li>
          <li><NavLink to="/my-and-supplies" className={({ isActive }) =>
     isActive
-      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
-      : "text-white px-4 py-2  transition"
+      ? "bg-[#B7B89F] px-4 py-2   font-medium shadow-sm"
+      : " px-4 py-2  transition"
   }>Pets and Supplies</NavLink></li>
          {
             user && <>
                 <li><NavLink to="/add-listing" className={({ isActive }) =>
     isActive
-      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
-      : "text-white px-4 py-2  transition"
+      ? "bg-[#B7B89F] px-4 py-2   font-medium shadow-sm"
+      : " px-4 py-2  transition"
   }>Add Listing</NavLink></li>
                 <li><NavLink to="/my-listings" className={({ isActive }) =>
     isActive
-      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
-      : "text-white px-4 py-2  transition"
+      ? "bg-[#B7B89F] px-4 py-2   font-medium shadow-sm"
+      : " px-4 py-2  transition"
   }>My Listings</NavLink></li>
                 <li><NavLink to="/my-orders" className={({ isActive }) =>
     isActive
-      ? "bg-pink-500 text-white px-4 py-2   font-medium shadow-sm"
-      : "text-white px-4 py-2  transition"
+      ? "bg-[#B7B89F] px-4 py-2   font-medium shadow-sm"
+      : " px-4 py-2  transition"
   }>My Orders</NavLink></li>
             </>
          }
@@ -65,9 +65,9 @@ const Navbar = () => {
     }
 
     return (
-        <div className='bg-[#30b5b2]'>
-         <div className='sticky top-0 z-10 max-w-[1440px] mx-auto'>
-             <div className="navbar  text-white">
+        <div className='bg-[#777C6D] fixed top-0 left-0 right-0 z-50 shadow'>
+         <div className=' max-w-[1440px] mx-auto'>
+             <div className="navbar text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -98,7 +98,7 @@ const Navbar = () => {
                          className="toggle me-2" />
 
                         <img className='w-10 h-10 rounded-full me-2' title={user?.displayName || "User"} src={ user?.photoURL} alt="" />
-                        <a onClick={handleLogOut} className="btn bg-pink-500 text-white ">Logout</a>
+                        <a onClick={handleLogOut} className="btn bg-[#B7B89F] text-white ">Logout</a>
                         </>  : 
                         <>
                         <Link to="/login" className="btn me-2">Log in</Link>
