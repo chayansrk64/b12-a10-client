@@ -8,7 +8,9 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
     const {user, loading, logOut} = use(AuthContext);
-    // console.log(user);
+   
+
+
 
     const links = <>
          <li><NavLink to="/"  className={({ isActive }) =>
@@ -97,8 +99,18 @@ const Navbar = () => {
                          defaultChecked={localStorage.getItem('theme')}
                          className="toggle me-2" />
 
-                        <img className='w-10 h-10 rounded-full me-2' title={user?.displayName || "User"} src={ user?.photoURL} alt="" />
-                        <a onClick={handleLogOut} className="btn bg-[#B7B89F] text-white ">Logout</a>
+<details className="dropdown  relative">
+  <summary className="btn rounded-full h-[50px] w-[50px] p-0 m-0">
+        <img  className=' rounded-full' title={user?.displayName || "User"} src={ user?.photoURL} alt="" />
+  </summary>
+  <div className="menu dropdown-content bg-[#B7B89F] rounded-box z-1 w-52 p-2 shadow-sm mt-2 -translate-x-[150px] lg:-translate-x-20">
+    <img className='w-1/2 mx-auto' src={user?.photoURL} alt="" />
+    <h3 className='text-center text-lg font-semibold mb-3'>{user?.displayName}</h3>
+    <a onClick={handleLogOut} className="btn bg-[#B7B89F] text-white ">Logout</a>
+     
+  </div>
+</details>
+                        {/* <a onClick={handleLogOut} className="btn bg-[#B7B89F] text-white ">Logout</a> */}
                         </>  : 
                         <>
                         <Link to="/login" className="btn me-2">Log in</Link>
@@ -110,6 +122,8 @@ const Navbar = () => {
             </div>
             </div>
         </div>
+
+
         </div>
     );
 };
