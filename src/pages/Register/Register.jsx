@@ -114,10 +114,12 @@ const Register = () => {
 
 
   return (
-     <div className=" flex font-sans">
+     <div className=" flex  mt-16 min-h-screen">
       {/* Left Panel */}
       <div className="w-1/2 bg-cover bg-center relative hidden lg:block" style={{ backgroundImage: "url('/sand-dunes.jpg')" }}>
-        <div className="absolute inset-0 bg-black h-[638px] bg-opacity-40 flex flex-col justify-between p-8 text-white">
+        <div style={{ backgroundImage: "url('https://images.stockcake.com/public/2/3/a/23af9c63-075a-4371-be6d-378302a8d420_large/puppy-with-toy-stockcake.jpg')",   backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center", }} className="absolute inset-0 bg-[#B7B89F] bg-opacity-40 flex flex-col justify-between p-8 text-white">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold tracking-wide">PawMart</h1>
             <Link to="/" className="text-sm underline hover:text-gray-300">Back to Home</Link>
