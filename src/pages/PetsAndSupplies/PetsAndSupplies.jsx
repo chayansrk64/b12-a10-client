@@ -15,7 +15,7 @@ const PetsAndSupplies = () => {
 
   // ✅ Fetch all listings and show all by default
   useEffect(() => {
-    fetch('http://localhost:3000/listings')
+    fetch('https://pawmart-server-dusky.vercel.app/listings')
       .then((res) => res.json())
       .then((data) => {
         setListings(data);
@@ -115,7 +115,7 @@ const PetsAndSupplies = () => {
  
 
       {/* Listings Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-8">
         {displayedListings.length > 0 ? (
           displayedListings.map((listing) => (
             <ListingCard key={listing._id} listing={listing} />

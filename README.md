@@ -1,7 +1,7 @@
 # 🐾 PawMart — Adopt, Rescue & Rehome Pets
 
 **Live Site:** [https://pawmart-6d54f.web.app](https://pawmart-6d54f.web.app)  
-**Server API:** [http://localhost:3000](http://localhost:3000)
+**Server API:** [https://pawmart-server-dusky.vercel.app](https://pawmart-server-dusky.vercel.app)
 
 PawMart is a pet adoption and care platform built with modern web technologies.  
 It connects adopters with lovable pets and promotes compassion through adoption and rescue awareness.

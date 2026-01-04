@@ -26,7 +26,7 @@ const UpdateListing = () => {
             image
         }
 
-        fetch(`http://localhost:3000/listings/${listing._id}`, {
+        fetch(`https://pawmart-server-dusky.vercel.app/listings/${listing._id}`, {
             method: "PATCH",
             headers: {
                 'content-type':'application/json'

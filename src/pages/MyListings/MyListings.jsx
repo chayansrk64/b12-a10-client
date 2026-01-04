@@ -10,7 +10,7 @@ const MyListings = () => {
     const [myListings, setMyListings] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/listings?email=${user?.email}`)
+        fetch(`https://pawmart-server-dusky.vercel.app/listings?email=${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setMyListings(data)
@@ -38,7 +38,7 @@ const handleDelete = (id) => {
           onClick={() => {
             // Proceed with delete
             toast.dismiss(); // close the confirmation toast
-            fetch(`http://localhost:3000/listings/${id}`, {
+            fetch(`https://pawmart-server-dusky.vercel.app/listings/${id}`, {
               method: 'DELETE',
             })
               .then((res) => res.json())

@@ -18,7 +18,7 @@ const SocialLogin = () => {
                 image: user.photoURL,
                 email: user.email
             }
-            fetch('http://localhost:3000/users', {
+            fetch('https://pawmart-server-dusky.vercel.app/users', {
                 method: "POST",
                 headers: {
                     'content-type':'application/json'

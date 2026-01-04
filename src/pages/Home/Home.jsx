@@ -8,7 +8,7 @@ import Testimonials from '../../components/Testimonials/Testimonials';
 import FAQ from '../../components/FAQ/FAQ';
 import CTA from '../../components/CTA/CTA';
  
-const listingsPromise = fetch('http://localhost:3000/latest-listings').then(res => res.json());
+const listingsPromise = fetch('https://pawmart-server-dusky.vercel.app/latest-listings').then(res => res.json());
 
 const Home = () => {
     return (

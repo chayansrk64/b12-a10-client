@@ -39,13 +39,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/listing-details/:id',
-                loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
+                loader: ({params}) => fetch(`https://pawmart-server-dusky.vercel.app/listings/${params.id}`),
                 element: <ListingDetails></ListingDetails>,
                 hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>
             },
             {
                 path: '/listing-update/:id',
-                loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
+                loader: ({params}) => fetch(`https://pawmart-server-dusky.vercel.app/listings/${params.id}`),
                 element: <UpdateListing></UpdateListing>,
                 hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>
             },

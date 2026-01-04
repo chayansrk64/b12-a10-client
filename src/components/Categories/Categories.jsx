@@ -14,7 +14,7 @@ const Categories = ({listingsPromise}) => {
     const Accessories = categories.filter(item => item.category === "Accessories").slice(0,1)
     const petCare = categories.filter(item => item.category === "Pet Care").slice(0,1)
 
-    // console.log(pets, petFood, Accessories, petCare);
+    console.log(pets, petFood, Accessories, petCare);
 
     return (
         <div className='max-w-7xl mx-auto'>

@@ -47,7 +47,7 @@ const ListingDetails = () => {
         // console.log(myOrder);
 
         // saved to database;
-        fetch('http://localhost:3000/orders', {
+        fetch('https://pawmart-server-dusky.vercel.app/orders', {
             method: "POST",
             headers: {
                 'content-type':'application/json'

@@ -23,7 +23,7 @@ const AddListing = () => {
 
     // save to db
 
-        fetch('http://localhost:3000/listings', {
+        fetch('https://pawmart-server-dusky.vercel.app/listings', {
             method: "POST",
             headers: {
                 'content-type':'application/json'

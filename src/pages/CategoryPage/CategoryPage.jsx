@@ -9,7 +9,7 @@ const CategoryPage = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/categories`)
+        fetch(`https://pawmart-server-dusky.vercel.app/categories`)
         .then(res => res.json())
         .then(data => {
             const filtered = data.filter(item => item.category === categoryName)
