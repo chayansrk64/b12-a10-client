@@ -136,12 +136,12 @@ const MyOrders = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto mt-24">
       <SectionTitle title="My Orders"></SectionTitle>
       {/* table container */}
       <div>
         <div className="text-right my-3">
-            <button onClick={handleDownloadPDF}  className="btn btn-accent tooltip" data-tip="Download form as PDF">Download </button>
+            <button onClick={handleDownloadPDF}  className="btn bg-[#B7B89F] tooltip" data-tip="Download form as PDF">Download </button>
             </div>
         <div className="overflow-x-auto">
           <table className="table">

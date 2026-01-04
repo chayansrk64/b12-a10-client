@@ -6,7 +6,7 @@ const ListingCard = ({listing}) => {
     return (
         <div className='overflow-y-hidden'>
          <>
-            <div data-aos="fade-up" className="relative bg-[#EEEEEE] dark:bg-black rounded-2xl shadow hover:shadow-md transition p-4 mx-auto"
+            <div data-aos="fade-up" className="relative h-[436px] bg-[#EEEEEE] dark:bg-black rounded-2xl shadow hover:shadow-md transition p-4 mx-auto"
             
             >
       {/* Favorite Icon */}

@@ -38,6 +38,7 @@ const UpdateListing = () => {
             console.log('updated listing', data);
             if(data.modifiedCount > 0){
                 toast('Listing Updated!')
+                 
             }
         })
 
@@ -124,7 +125,7 @@ const UpdateListing = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-md transition"
+          className="w-full bg-[#B7B89F] hover:bg-[#777C6D] text-white font-semibold py-2 px-4 rounded-md transition"
         >
           Update Listing
         </button>

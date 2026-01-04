@@ -1,12 +1,18 @@
 
 import { use } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthContext";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { toast } from "react-toastify";
 
 const Login = () => {
 
     const {signInUser} = use(AuthContext);
+     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from || "/";
+
   
   const handleLogin = e => {
     e.preventDefault()
@@ -14,9 +20,11 @@ const Login = () => {
     const password = e.target.password.value;
 
     signInUser(email, password)
-    .then(() => alert('logout successfull'))
-    .catch(error => console.log(error))
-    console.log('login ');
+    .then(() => {
+      toast.success("Login Successfull!")
+       navigate(from, { replace: true });
+    })
+    .catch(error => toast.error(error.message))
   }
 
 

@@ -7,7 +7,7 @@ import { motion } from "motion/react"
 
 const Categories = ({listingsPromise}) => {
     const categories = use(listingsPromise)
-    // console.log('categories', categories);
+    console.log('categories', categories);
 
     const pets = categories.filter(item => item.category === "Pets").slice(0,1)
     const petFood = categories.filter(item => item.category === "Pet Food").slice(0,1)

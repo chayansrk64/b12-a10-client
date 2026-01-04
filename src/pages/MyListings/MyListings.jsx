@@ -73,7 +73,7 @@ if(loading){
 }
 
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto mt-24'>
             <SectionTitle title="My Listings"></SectionTitle>
             {/* table container */}
             <div>
@@ -123,10 +123,10 @@ if(loading){
         <td className="font-bold">{listing.price}</td>
         <td>
           <Link to={`/listing-update/${listing._id}`}
-          className="btn btn-ghost btn-xs bg-green-500 text-white me-2 tooltip" data-tip="Update Your Product">
+          className="btn btn-ghost btn-xs bg-[#B7B89F] text-white me-2 tooltip" data-tip="Update Your Product">
           Update
           </Link>
-          <button onClick={() => handleDelete(`${listing._id}`)} className="btn btn-ghost btn-xs bg-red-500 text-white tooltip" data-tip="Delete Your Product">Delete</button>
+          <button onClick={() => handleDelete(`${listing._id}`)} className="btn btn-ghost btn-xs bg-red-400 text-white tooltip" data-tip="Delete Your Product">Delete</button>
         </td>
       </tr>
      )

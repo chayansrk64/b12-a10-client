@@ -17,7 +17,7 @@ const AddListing = () => {
         const description = form.description.value;
         const image = form.image.value;
 
-        console.log({name, category, price, location, description, image, email: user?.email, date: new Date()});
+        // console.log({name, category, price, location, description, image, email: user?.email, date: new Date()});
 
        const newListing = {name, category, price, location, description, image, email: user?.email, date: new Date()};
 
@@ -36,6 +36,7 @@ const AddListing = () => {
             if(data.insertedId){
                 toast("Listing Added")
                 setLoading(false)
+                form.reset()
             }
         })
 
@@ -48,7 +49,7 @@ const AddListing = () => {
 
 
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto mt-24'>
            <SectionTitle title="Add Listing"></SectionTitle>
 
          <div className='lg:w-1/2 mx-auto my-6'>
@@ -141,7 +142,7 @@ const AddListing = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-md transition"
+          className="w-full bg-[#B7B89F] hover:bg-[#777C6D]  text-white font-semibold py-2 px-4 rounded-md transition"
         >
           Submit Listing
         </button>
